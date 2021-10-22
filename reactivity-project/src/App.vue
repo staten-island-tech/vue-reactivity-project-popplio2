@@ -4,7 +4,7 @@
     <h2>Notes for the organized unorganized</h2>
     <h3>Add a note to get started!</h3>
     <main class="notes">
-      <section class="note" v-for="note in notes" :key="note">
+      <section class="note" v-for="note in notes" :key="note.noteId">
         <NoteComponent :style="{ backgroundColor: note.noteColor}"/> 
         <!-- <button>delete</button> -->
         <!-- @displayNewNote="addNote($event)" -->
@@ -115,8 +115,8 @@ export default {
   }
   .buttons {
     position: fixed;
-    padding: 2rem;
     display: flex;
+    padding: 2rem;
     bottom: 2%;
     right: 2%;
   }
@@ -132,7 +132,7 @@ export default {
     transform: translateY(-.5rem);
   }
   .select-btn {
-    /* display: block; */
+    font-size: 3rem;
     background-color: #ececec;
     box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, 0.25);
   }

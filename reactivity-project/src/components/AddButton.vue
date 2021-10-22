@@ -25,7 +25,6 @@ export default {
     .add-btn {
         width: 5rem;
         height: 5rem;
-        font-size: 3rem;
         border-radius: 50%;
         border: .1rem solid;
         cursor: pointer;

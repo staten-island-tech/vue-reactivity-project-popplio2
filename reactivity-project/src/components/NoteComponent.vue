@@ -1,6 +1,11 @@
 <template>
     <div class="note-container">
-      <textarea class="note-text" placeholder="Write in me!" contenteditable="true"></textarea>
+      <div class="note-header">
+        <button class="copy-btn" @click="copyNote">CTC</button>
+        
+        <button class="delete-btn" @click="deleteNote">X</button>
+      </div>
+      <textarea class="note-text" placeholder="Write in me!"></textarea>
     </div>
 </template>
 
@@ -20,6 +25,14 @@ export default {
       ], 
     }
   },
+  methods: {
+    deleteNote(event) {
+      event.target.parentNode.parentNode.parentNode.remove();
+    },
+    copyNote(event) {
+      navigator.clipboard.writeText(event.target.parentNode.nextSibling.value);
+    }
+  }
 };
 </script>
 
@@ -34,12 +47,21 @@ export default {
     transform: scale(1.1);
     z-index: 1;
   }
-  .note-container::before {
-    display: inline-block;
-    content: "";
+  .note-header {
+    display: flex;
+    justify-content: space-between;
     width: 25rem;
     height: 4rem;
+    padding: 0 1.5rem;
     background-color: rgba(0, 0, 0, 0.05);
+  }
+  .delete-btn {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 2rem;
+    color: rgb(156, 0, 0);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
   .note-text {
     display: inline-block;
