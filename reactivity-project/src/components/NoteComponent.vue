@@ -1,8 +1,7 @@
 <template>
     <div class="note-container">
       <div class="note-header">
-        <button class="copy-btn" @click="copyNote">CTC</button>
-        
+        <button class="copy-btn" @click="copyNote">📋</button>
         <button class="delete-btn" @click="deleteNote">X</button>
       </div>
       <textarea class="note-text" placeholder="Write in me!"></textarea>
@@ -11,20 +10,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      colors: [
-        '#FF7171', //RED
-        '#FFAA68', //ORANGE
-        '#FFFD71', //YELLOW
-        '#AAF68E', //GREEN
-        '#8EE9F6', //BLUE
-        '#9EC0FF', //INDIGO
-        '#B48EF6', //VIOLET
-        '#F4AADA', //PINK
-      ], 
-    }
-  },
   methods: {
     deleteNote(event) {
       event.target.parentNode.parentNode.parentNode.remove();
@@ -55,25 +40,27 @@ export default {
     padding: 0 1.5rem;
     background-color: rgba(0, 0, 0, 0.05);
   }
-  .delete-btn {
+  .note-header button, .note-text {
     font-family: 'Gloria Hallelujah', cursive;
-    font-size: 2rem;
-    color: rgb(156, 0, 0);
-    border: none;
     background-color: transparent;
+    border: none;
     cursor: pointer;
+  }
+  .note-header button {
+    font-size: 2rem;
+  }
+  .delete-btn {
+    font-size: 2rem;
+    color: rgb(53, 53, 53);
   }
   .note-text {
     display: inline-block;
-    font-family: 'Gloria Hallelujah', cursive;
     font-size: 1.6rem;
     letter-spacing: .05rem;
     line-height: 1.4;
     width: 25rem;
     height: 20.5rem;
     padding: 1rem 1.5rem;
-    background-color: transparent;
-    border: none;
     resize: none;
     outline: none;
   }

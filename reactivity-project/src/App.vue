@@ -16,6 +16,7 @@
       </div>
       <div>
         <button @click="getRandomColor" class="select-btn add-btn">{{ buttonStatus }}</button>
+        <button @click="getRandomColor" class="select-btn mobile-btn add-btn">⇆</button>
       </div>
     </div>
   </div>
@@ -106,8 +107,7 @@ export default {
   }
   .notes {
     overflow-y: scroll;
-    padding: 2rem;
-    padding-top: 5rem;
+    padding: 5rem 2rem;
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
@@ -136,9 +136,41 @@ export default {
     background-color: #ececec;
     box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, 0.25);
   }
+  .mobile-btn {
+    display: none;
+    box-shadow: none;
+  }
   .buttons:hover .add-btn {
     margin: 0;
     /* display: block; */
   }
+
+  @media only screen and (max-width: 768px) {
+    .buttons {
+      overflow-y: scroll;
+      flex-direction: column;
+      gap: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .buttons:hover {
+      gap: 0;
+    }
+    .add-btn {
+      margin-left: 0;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+    .add-btn:hover {
+      transform: none;
+    }
+    .select-btn {
+      display: none;
+    }
+    .mobile-btn {
+      display: block;
+      font-size: 2rem;
+    }
+ } 
   
 </style>
