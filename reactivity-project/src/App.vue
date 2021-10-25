@@ -2,10 +2,9 @@
   <div id="app">
     <h1>Scrappy</h1>
     <h2>Notes for the organized unorganized</h2>
-    <h3>Add a note to get started!</h3>
     <main class="notes">
       <section class="note" v-for="note in notes" :key="note.noteId">
-        <NoteComponent :style="{ backgroundColor: note.noteColor}"/> 
+        <NoteComponent :style="{ backgroundColor: note.noteColor }"/> 
         <!-- <button>delete</button> -->
         <!-- @displayNewNote="addNote($event)" -->
       </section>
@@ -37,6 +36,10 @@ export default {
       buttonStatus: '+',
       noteCounter: 0,
       notes: [
+        {
+          noteId: 0,
+          noteColor: '#FFFD71'
+        }
       ],
       colors: [
         '#FF7171', //RED
@@ -91,7 +94,7 @@ export default {
     padding: 2%;
     font-family: 'Gloria Hallelujah', cursive;
   }
-  h1, h2, h3 {
+  h1, h2 {
     text-align: center;
     letter-spacing: .05rem;
   }
@@ -102,9 +105,9 @@ export default {
   h2 {
     font-size: 2rem;
   }
-  h3 {
+  /* h3 {
     font-size: 1.6rem;
-  }
+  } */
   .notes {
     overflow-y: scroll;
     padding: 5rem 2rem;
