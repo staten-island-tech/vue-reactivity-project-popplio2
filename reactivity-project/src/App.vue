@@ -148,6 +148,34 @@ export default {
     /* display: block; */
   }
 
+  @media only screen and (max-width: 1200px) {
+    .buttons {
+      gap: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .buttons {
+      gap: .5rem;
+    }
+    .buttons:hover {
+      gap: .5rem;
+    }
+    .add-btn {
+      margin-left: 0;
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+    .add-btn:hover {
+      transform: none;
+    }
+    .select-btn {
+      display: none;
+    }
+    .mobile-btn {
+      display: block;
+      font-size: 2rem;
+    }
+  }
   @media only screen and (max-width: 768px) {
     .buttons {
       overflow-y: scroll;
