@@ -4,6 +4,7 @@
 
 <script>
 export default {
+    name: 'AddButton',
     data() {
         return {
             selectedColor: '',

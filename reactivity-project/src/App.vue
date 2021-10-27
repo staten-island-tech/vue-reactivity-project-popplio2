@@ -15,7 +15,7 @@
       </div>
       <div>
         <button @click="getRandomColor" class="select-btn add-btn">{{ buttonStatus }}</button>
-        <button @click="getRandomColor" class="select-btn mobile-btn add-btn">⇆</button>
+        <button @click="getRandomColor" class="select-btn mobile-btn add-btn">?</button>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@ export default {
         this.notes.push(newNote);
       },
       changeButton() {
-        this.buttonStatus = '⇆';
+        this.buttonStatus = '?'; //⇆
         document.querySelector('.select-btn').style.boxShadow = 'none';
       },
       changeButtonBack() {

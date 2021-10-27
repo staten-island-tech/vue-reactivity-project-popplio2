@@ -10,13 +10,14 @@
 
 <script>
 export default {
+  name: 'NoteComponent',
   methods: {
     deleteNote(event) {
       event.target.parentNode.parentNode.parentNode.remove();
     },
     copyNote(event) {
       navigator.clipboard.writeText(event.target.parentNode.nextSibling.value);
-    }
+    },
   }
 };
 </script>
