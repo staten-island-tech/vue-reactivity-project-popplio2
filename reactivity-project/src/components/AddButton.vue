@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
     .add-btn {
         width: 5rem;
         height: 5rem;

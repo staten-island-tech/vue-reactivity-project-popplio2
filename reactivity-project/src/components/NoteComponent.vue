@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
   .note-container {
     width: 25rem;
     height: 25rem;
@@ -52,7 +52,7 @@ export default {
   }
   .delete-btn {
     font-size: 2rem;
-    color: rgb(53, 53, 53);
+    color: var(--gray);
   }
   .note-text {
     display: inline-block;
@@ -66,7 +66,7 @@ export default {
     outline: none;
   }
   .note-text::placeholder {
-    color: #000;
+    color: var(--black);
   }
   .note-text:focus::placeholder {
     color: transparent;
