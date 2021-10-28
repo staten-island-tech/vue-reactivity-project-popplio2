@@ -81,14 +81,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
-
-:root {
-    --black: "#000";
-    --gray: "#353535";
-    --lightgray: "#ececec";
-}
 
   *, html, body {
     font-size: 62.5%;
@@ -142,7 +136,7 @@ export default {
   }
   .select-btn {
     font-size: 3rem;
-    background-color: var(--lightgray);
+    background-color: #ececec;
     box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, 0.25);
   }
   .mobile-btn {
