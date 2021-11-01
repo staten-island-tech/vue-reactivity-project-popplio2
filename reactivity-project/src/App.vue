@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+
+    <h1>Scrappy</h1>
+    <h2>Notes for the organized unorganized</h2>
+
     <div class="dropdown">
       <h3 @click="dropdownClick" v-if="!isDropdown" class="theme-header">Themes</h3>
       <button @click="dropdownClick" v-else class="theme-close">X</button>
@@ -13,9 +17,6 @@
         </div>
      </transition>
     </div>
-
-    <h1>Scrappy</h1>
-    <h2>Notes for the organized unorganized</h2>
 
     <main class="notes">
       <section class="note" v-for="note in notes" :key="note.noteId">
@@ -333,8 +334,10 @@ export default {
   }
   @media only screen and (max-width: 768px) {
     .dropdown {
-      position: unset;
-      display: inline-block;
+      padding: 1rem;
+    }
+    .dropdown h3 {
+      font-size: 1.5rem;
     }
     .buttons {
       overflow-y: scroll;
