@@ -8,12 +8,8 @@
       <h3 @click="dropdownClick" v-if="!isDropdown" class="theme-header">Themes</h3>
       <button @click="dropdownClick" v-else class="theme-close">X</button>
       <transition name="slide-fade">
-        <div class="dropdown-options" v-if="isDropdown">
-          <button @click="toNoTheme" class="theme-btn">Vanilla</button>
-          <button @click="toCoolTheme" class="theme-btn">Cool</button>
-          <button @click="toWarmTheme" class="theme-btn">Warm</button>   
-          <button @click="toRainbowTheme" class="theme-btn">Rainbow</button>
-          <button @click="toPastelTheme" class="theme-btn">Pastel</button>
+        <div v-if="isDropdown" class="dropdown-options">
+          <button v-for="theme in themes" :key="theme" @click="toTheme(theme)" class="theme-btn">{{ theme }}</button>
         </div>
      </transition>
     </div>
@@ -94,6 +90,9 @@ export default {
           code: '#F4AADA',
         },
       ], 
+      themes: [
+        'vanilla', 'cool', 'warm', 'rainbow', 'pastel'
+      ]
     }
   },
   mounted() {
@@ -132,20 +131,8 @@ export default {
         newNote['noteColor'] = this.colors[colorIndex].code;
         this.notes.push(newNote);
       },
-      toNoTheme() {
-        document.documentElement.setAttribute('theme', 'none');
-      },
-      toCoolTheme() {
-        document.documentElement.setAttribute('theme', 'cool');
-      },
-      toWarmTheme() {
-        document.documentElement.setAttribute('theme', 'warm');
-      },
-      toRainbowTheme() {
-        document.documentElement.setAttribute('theme', 'rainbow');
-      },
-      toPastelTheme() {
-        document.documentElement.setAttribute('theme', 'pastel');
+      toTheme(theme) {
+        document.documentElement.setAttribute('theme', theme);
       },
       dropdownClick() {
         if(!this.isDropdown) {
@@ -165,6 +152,7 @@ export default {
 
   :root {
     --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+    --translate-up: translateY(-.5rem);
   }
   :root[theme="none"] {
     --gradient: none;
@@ -229,7 +217,7 @@ export default {
     z-index: 1;
   }
   .dropdown:hover {
-    transform: translateY(-.5rem);
+    transform: var(--transform-up);
     box-shadow: var(--box-shadow);
   }
   .dropdown h3,
@@ -238,8 +226,14 @@ export default {
     cursor: pointer;
   }
   .dropdown button {
+    background-color: transparent;
+    text-transform: capitalize;
     font-family: 'Gloria Hallelujah', cursive;
     border: none;
+    transition: all .3s;
+  }
+  .dropdown button:hover {
+    transform: translate(-.25rem);
   }
   .dropdown .theme-close {
     font-size: 2rem;
@@ -285,7 +279,7 @@ export default {
     transition: all .2s;
   }
   .add-btn:hover {
-    transform: translateY(-.5rem);
+    transform: var(--transform-up);
   }
   .select-btn {
     font-size: 3rem;
@@ -304,6 +298,9 @@ export default {
     .dropdown:hover {
       transform: none;
       box-shadow: none;
+    }
+    .dropdown button:hover {
+      transform: none;
     }
     .buttons {
       gap: 0;
