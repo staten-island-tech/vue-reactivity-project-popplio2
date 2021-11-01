@@ -334,6 +334,10 @@ export default {
   }
   @media only screen and (max-width: 768px) {
     .dropdown {
+      bottom: 2%;
+      left: 2%;
+      top: unset;
+      right: unset;
       padding: 1rem;
     }
     .dropdown h3 {
