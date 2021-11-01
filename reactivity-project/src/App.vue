@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-
-    <h1>Scrappy</h1>
-    <h2>Notes for the organized unorganized</h2>
-
     <div class="dropdown">
       <h3 @click="dropdownClick" v-if="!isDropdown" class="theme-header">Themes</h3>
       <button @click="dropdownClick" v-else class="theme-close">X</button>
       <transition name="slide-fade">
         <div class="dropdown-options" v-if="isDropdown">
-          <button @click="toNoTheme" class="theme-btn">None</button>
+          <button @click="toNoTheme" class="theme-btn">Vanilla</button>
           <button @click="toCoolTheme" class="theme-btn">Cool</button>
           <button @click="toWarmTheme" class="theme-btn">Warm</button>   
           <button @click="toRainbowTheme" class="theme-btn">Rainbow</button>
@@ -17,6 +13,9 @@
         </div>
      </transition>
     </div>
+
+    <h1>Scrappy</h1>
+    <h2>Notes for the organized unorganized</h2>
 
     <main class="notes">
       <section class="note" v-for="note in notes" :key="note.noteId">
@@ -333,6 +332,10 @@ export default {
     }
   }
   @media only screen and (max-width: 768px) {
+    .dropdown {
+      position: unset;
+      display: inline-block;
+    }
     .buttons {
       overflow-y: scroll;
       flex-direction: column;
