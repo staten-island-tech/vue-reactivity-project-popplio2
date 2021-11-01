@@ -229,11 +229,13 @@ export default {
     background-color: transparent;
     text-transform: capitalize;
     font-family: 'Gloria Hallelujah', cursive;
-    border: none;
+    padding: 0;
+    margin: 1rem 1.5rem;
+    border: .15rem solid transparent;
     transition: all .3s;
   }
   .dropdown button:hover {
-    transform: translate(-.25rem);
+    border-bottom: .15rem solid;
   }
   .dropdown .theme-close {
     font-size: 2rem;
@@ -246,6 +248,7 @@ export default {
     transform: translateY(-1rem);
     opacity: 0;
   }
+  
   .dropdown-options {
     display: flex;
     flex-direction: column;
@@ -266,7 +269,6 @@ export default {
   .buttons {
     position: fixed;
     display: flex;
-    padding: 2rem;
     bottom: 2%;
     right: 2%;
   }
@@ -299,13 +301,11 @@ export default {
       transform: none;
       box-shadow: none;
     }
-    .dropdown button:hover {
-      transform: none;
+    .dropdown button {
+      border: none;
     }
-    .buttons {
-      gap: 0;
-      right: 0;
-      bottom: 0;
+    .dropdown button:hover {
+      border-bottom: none;
     }
     .buttons {
       gap: .5rem;
@@ -343,12 +343,6 @@ export default {
     .buttons {
       overflow-y: scroll;
       flex-direction: column;
-      gap: 0;
-      right: 0;
-      bottom: 0;
-    }
-    .buttons:hover {
-      gap: 0;
     }
     .add-btn {
       margin-left: 0;
