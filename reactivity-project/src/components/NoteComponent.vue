@@ -4,7 +4,7 @@
         <button class="copy-btn" @click="copyNote">📋</button>
         <button class="delete-btn" @click="deleteNote">X</button>
       </div>
-      <textarea class="note-text" placeholder="Write in me!"></textarea>
+      <textarea class="note-text" aria-label="textarea" placeholder="Write in me!"></textarea>
     </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   .note-container {
     width: 25rem;
     height: 25rem;
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow);
     transition: all .3s;
   }
   .note-container:hover {
