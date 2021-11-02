@@ -91,7 +91,7 @@ export default {
         },
       ], 
       themes: [
-        'vanilla', 'cool', 'warm', 'rainbow', 'pastel'
+        'vanilla', 'cool', 'warm', 'rainbow', 'sunrise', 'pastel'
       ]
     }
   },
@@ -166,6 +166,9 @@ export default {
   :root[theme="rainbow"] {
     --gradient: linear-gradient(to right top, #ff7171, #ffa952, #f4b94f, #e7c953, #d7d75e, #c5e56f, #99eb89, #67eea9, #00eecb, #00e0f8, #00ccff, #53b1ff, #b48ef6);
   }
+  :root[theme="sunrise"] {
+    --gradient: linear-gradient(to right top, #fffd71, #ffd56b, #ffae85, #ff92ad, #ff88d2, #f08bdd, #de8fe7, #cb93ee, #d997e8, #e49de3, #eda3de, #f4aada);
+  }
   :root[theme="pastel"] {
     --gradient:  
       radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),  
@@ -217,7 +220,7 @@ export default {
     z-index: 1;
   }
   .dropdown:hover {
-    transform: var(--transform-up);
+    transform: var(--translate-up);
     box-shadow: var(--box-shadow);
   }
   .dropdown h3,
@@ -281,7 +284,7 @@ export default {
     transition: all .2s;
   }
   .add-btn:hover {
-    transform: var(--transform-up);
+    transform: var(--translate-up);
   }
   .select-btn {
     font-size: 3rem;
