@@ -279,7 +279,6 @@ export default {
     gap: .5rem;
   }
   .add-btn {
-    /* display: none; */
     margin-left: -5rem;
     transition: all .2s;
   }
@@ -311,13 +310,10 @@ export default {
       border-bottom: none;
     }
     .buttons {
-      gap: .5rem;
-    }
-    .buttons:hover {
-      gap: .5rem;
+      gap: 0;
     }
     .add-btn {
-      margin-left: 0;
+      margin-left: .5rem;
       width: 4.5rem;
       height: 4.5rem;
     }
