@@ -244,14 +244,14 @@ export default {
     font-size: 2rem;
   }
 
-  .slide-fade-enter-active {
-    transition: all .3s ease;
-  }
-  .slide-fade-enter, .slide-fade-leave-to {
-    transform: translateY(-1rem);
-    opacity: 0;
-  }
-  
+    .slide-fade-enter-active {
+      transition: all .3s ease;
+    }
+    .slide-fade-enter, .slide-fade-leave-to {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+    
   .dropdown-options {
     display: flex;
     flex-direction: column;
@@ -279,6 +279,7 @@ export default {
     gap: .5rem;
   }
   .add-btn {
+    font-family: 'Gloria Hallelujah', cursive;
     margin-left: -5rem;
     transition: all .2s;
   }
@@ -287,6 +288,7 @@ export default {
   }
   .select-btn {
     font-size: 3rem;
+    line-height: 3rem;
     background-color: #ececec;
     box-shadow: var(--box-shadow);
   }
@@ -310,10 +312,13 @@ export default {
       border-bottom: none;
     }
     .buttons {
-      gap: 0;
+      gap: .5rem;
+    }
+    .buttons:hover {
+      gap: .5rem;
     }
     .add-btn {
-      margin-left: .5rem;
+      margin-left: 0;
       width: 4.5rem;
       height: 4.5rem;
     }
