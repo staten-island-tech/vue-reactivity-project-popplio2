@@ -59,11 +59,11 @@ export default {
       colors: [
         {
           name: 'red',
-          code: '#FF7171',
+          code: '#FF6767',
         },
         {
           name: 'orange',
-          code: '#FFA952',
+          code: '#FF9752',
         },
         {
           name: 'yellow',
