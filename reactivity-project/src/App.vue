@@ -91,7 +91,7 @@ export default {
         },
       ], 
       themes: [
-        'vanilla', 'cool', 'warm', 'rainbow', 'sunrise', 'pastel'
+        'light', 'dark', 'cool', 'warm', 'rainbow', 'sunrise', 'pastel'
       ]
     }
   },
@@ -153,9 +153,14 @@ export default {
   :root {
     --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
     --translate-up: translateY(-.5rem);
+    --text-color: #000;
   }
-  :root[theme="none"] {
+  :root[theme="light"] {
     --gradient: none;
+  }
+  :root[theme="dark"] {
+    --gradient: #414141;
+    --text-color: #f0f0f0;
   }
   :root[theme="cool"] {
     --gradient: linear-gradient(to right top, #ff7171, #fb81b9, #d5a0ee, #a2bdff, #85d3ff, #89d7ff, #8ddaff, #91deff, #a1d4ff, #bdc7ff, #dcb8f4, #f4aada);
@@ -194,9 +199,10 @@ export default {
   body {
     padding: 2%;
     font-family: 'Gloria Hallelujah', cursive;
-    background-image: var(--gradient);
+    background: var(--gradient);
   }
   h1, h2 {
+    color: var(--text-color);
     text-align: center;
     letter-spacing: .05rem;
   }
