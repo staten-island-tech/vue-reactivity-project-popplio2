@@ -160,7 +160,7 @@ export default {
   }
   :root[theme="dark"] {
     --gradient: #414141;
-    --text-color: #f0f0f0;
+    --text-color: #ececec;
   }
   :root[theme="cool"] {
     --gradient: linear-gradient(to right top, #ff7171, #fb81b9, #d5a0ee, #a2bdff, #85d3ff, #89d7ff, #8ddaff, #91deff, #a1d4ff, #bdc7ff, #dcb8f4, #f4aada);
